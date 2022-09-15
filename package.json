@@ -6,19 +6,15 @@
   "homepage": "https://github.com/__USERNAME__/__MODULENAME__#readme",
   "license": "SEE LICENSE IN LICENSE",
   "main": "main/index.js",
-  "module": "module/index.js",
   "directories": {
     "lib": "src",
     "test": "__tests__"
   },
   "files": [
-    "main",
-    "module"
+    "main"
   ],
   "scripts": {
-    "build:main": "cross-env BABEL_ENV=production babel src --out-dir main --delete-dir-on-start",
-    "build:module": "cross-env MODULE=true babel src --out-dir module --delete-dir-on-start",
-    "build": "npm run build:module && npm run build:main",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir main --delete-dir-on-start",
     "prepublish": "npm run build",
     "dev": "cross-env NODE_ENV=development babel-node src/index",
     "watch": "cross-env NODE_ENV=development babel-watch src/index",
